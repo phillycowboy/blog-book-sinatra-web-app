@@ -11,6 +11,9 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
+# gem 'fabricator', '~> 0.0.5'
+# gem 'faker', '~> 1.6', '>= 1.6.6'
+
 
 group :test do
   gem 'rspec'
