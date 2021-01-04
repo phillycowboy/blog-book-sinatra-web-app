@@ -17,6 +17,11 @@ class BlogsController < ApplicationController
     
      # show - list a single blog
      # make a get request to '/blogs/:id
+
+     get '/blogs/:id' do 
+        @blog = Blog.find(params[:id])
+        erb :'blogs/show'
+     end
    
     # UPDATE
 

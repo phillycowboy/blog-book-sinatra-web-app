@@ -1,7 +1,7 @@
-<h1>Blogs</h1>
+<h1>Blog Entries</h1>
 
 <% @blogs.each do |blog|%>
-    <h2><%= blog.title %></h2><br>
-    <h3><%= blog.author %></h3><br>
+    <h2><a href="/blogs/<%= blog.id %>"> <%= blog.title %> </a></h2><br>
+    <h3> By: <%= blog.author %></h3><br>
     <p><%= blog.content %></p><br>
 <%end%>
