@@ -1,0 +1,15 @@
+<h1>Create Your Blog Post</h1>
+<p><%= @error %></p>
+<form action="/blogs" method="POST">
+    <label>Blog Title</label>
+    <input type="text" name="title">
+    
+    <label>Author</label>
+    <input type="text" name="author">
+    
+    <label>Content</label>
+    <textarea type="textarea" name="content"></textarea>
+
+    <button type="Submit">Post Blog</button>
+
+</form>
