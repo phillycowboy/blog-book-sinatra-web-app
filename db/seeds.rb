@@ -1,3 +1,5 @@
+require 'faker'
+
 Blog.destroy_all
 
 
