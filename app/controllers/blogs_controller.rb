@@ -14,8 +14,8 @@ class BlogsController < ApplicationController
         # Create
         # make a post request to '/blogs'
         post '/blogs' do 
-            blog = Blog.new(params)
-            if !blog.title.empty? && !blog.author.empty? 
+            blog = current_user.blogs.build(params)
+            if !blog.title.empty? && !blog.author.empty? && !blog.content.empty?
                 blog.save 
                 redirect '/blogs'
             else
@@ -66,12 +66,12 @@ class BlogsController < ApplicationController
         patch '/blogs/:id' do 
             
             @blog = Blog.find(params[:id])
-            if !params["blog"]["title"].empty? && !params["blog"]["author"].empty? 
+            if !params["blog"]["title"].empty? && !params["blog"]["author"].empty? && !params["blog"]["content"].empty?
             @blog.update(params["blog"])
              redirect "/blogs/#{params[:id]}"
             else
                 @error = "Oops! Please fill out all of the available forms."
-                erb :'/blogs/new' 
+                erb :'/blogs/edit' 
             end
         end
 
