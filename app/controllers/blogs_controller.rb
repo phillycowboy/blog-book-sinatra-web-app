@@ -4,7 +4,11 @@ class BlogsController < ApplicationController
         # New
         # make a get request to '/blogs/new'
         get '/blogs/new' do 
-           erb :'/blogs/new' 
+            if logged_in?
+                erb :'/blogs/new'
+            else 
+                redirect '/login'
+            end 
         end
 
         # Create
@@ -24,16 +28,24 @@ class BlogsController < ApplicationController
      # index - list all blogs
      # make a get request to '/blogs'
      get '/blogs' do 
-        @blogs = Blog.all.reverse
-        erb :'blogs/index'
+        if logged_in?
+            @blogs = Blog.all.reverse
+            erb :'blogs/index'
+        else
+            redirect '/login'
+        end
      end
     
      # show - list a single blog
      # make a get request to '/blogs/:id
 
      get '/blogs/:id' do 
-        @blog = Blog.find(params[:id])
-        erb :'blogs/show'
+        if logged_in?
+            @blog = Blog.find(params[:id])
+            erb :'blogs/show'
+        else
+            redirect '/login'
+        end
      end
    
     # UPDATE
@@ -41,8 +53,12 @@ class BlogsController < ApplicationController
         # Edit
             # making a get request to '/blogs/:id/edit'
         get '/blogs/:id/edit' do 
-            @blog = Blog.find(params[:id])
-            erb :'/blogs/edit'
+            if logged_in?
+                @blog = Blog.find(params[:id])
+                erb :'/blogs/edit'
+            else
+                redirect '/login'
+            end
         end
         
         # Update
