@@ -47,6 +47,19 @@ class BlogsController < ApplicationController
         
         # Update
             #make a patch request to '/blogs/:id' 
+        patch '/blogs/:id' do 
+            # binding.pry 
+            # START HERE WITH PART 3 TOMORROW! 
+            blog = Blog.find(params[:id])
+            if !blog.title.empty? && !blog.author.empty? 
+                blog.save 
+                redirect '/blogs'
+            else
+                @error = "Oops! Please fill out all of the available forms."
+                erb :'/blogs/edit' 
+            end
+            blog.update(title: params[:title], author: params[:author], content: params[:content]) 
+        end
 
     #DELETE 
         # make a delete request to '/blogs/:id' 
