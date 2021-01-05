@@ -61,5 +61,10 @@ class BlogsController < ApplicationController
 
     #DELETE 
         # make a delete request to '/blogs/:id' 
+     delete '/blogs/:id' do 
+        blog = Blog.find(params[:id])
+        blog.destroy
+        redirect '/blogs'
+     end
 
 end
