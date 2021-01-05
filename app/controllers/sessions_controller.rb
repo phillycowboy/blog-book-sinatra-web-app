@@ -5,7 +5,6 @@ get '/login' do
     erb :'users/login'
 end 
 
-# users can log out
 
 post '/login' do 
     if params["username"].empty?  || params["password"].empty?
@@ -22,6 +21,11 @@ post '/login' do
     end
 end
 
+
+get '/logout' do 
+    session.clear 
+    redirect '/'
+end
 
 
 end
