@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210104184757) do
+ActiveRecord::Schema.define(version: 20210106184732) do
 
   create_table "blogs", force: :cascade do |t|
     t.string  "title"
@@ -20,9 +20,18 @@ ActiveRecord::Schema.define(version: 20210104184757) do
     t.integer "user_id"
   end
 
+  create_table "blogs_genres", id: false, force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "blog_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "type"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
   end
 
 end

@@ -11,9 +11,10 @@ post '/login' do
         @error = "Username and Password can't be blank" 
         erb :'users/login'      
     else 
-        if user = User.find_by(username: params["username"], password: params["password"])
+        if user = User.find_by(username: params["username"]) && user.authenticate(params["password"])
+              
               session[:user_id] = user.id
-               redirect '/blogs'
+              redirect '/blogs'
         else
             @error = "Account not found"
             erb :'users/login'
