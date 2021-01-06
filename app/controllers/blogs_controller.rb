@@ -1,22 +1,21 @@
 class BlogsController < ApplicationController
 
+    before do 
+        require_login
+    end
+
     # CREATE 
         # New
         # make a get request to '/blogs/new'
         get '/blogs/new' do 
-            if logged_in?
-                erb :'/blogs/new'
-            else 
-                redirect '/login'
-            end 
+            erb :'/blogs/new'
         end
 
         # Create
         # make a post request to '/blogs'
         post '/blogs' do 
             blog = current_user.blogs.build(params)
-            if !blog.title.empty? && !blog.author.empty? && !blog.content.empty?
-                blog.save 
+            if blog.save 
                 redirect '/blogs'
             else
                 @error = "Oops! Please fill out all of the available forms."
@@ -28,24 +27,21 @@ class BlogsController < ApplicationController
      # index - list all blogs
      # make a get request to '/blogs'
      get '/blogs' do 
-        if logged_in?
-            @blogs = Blog.all.reverse
-            erb :'blogs/index'
-        else
-            redirect '/login'
-        end
+        @blogs = Blog.all.reverse
+        erb :'blogs/index'
      end
     
      # show - list a single blog
      # make a get request to '/blogs/:id
 
      get '/blogs/:id' do 
-        if logged_in?
-            @blog = Blog.find(params[:id])
-            erb :'blogs/show'
-        else
-            redirect '/login'
+        @blog = Blog.find_by(id: params[:id])
+        if @blog 
+          erb :'blogs/show'
+        else 
+          redirect '/blogs'
         end
+       
      end
    
     # UPDATE
@@ -53,12 +49,8 @@ class BlogsController < ApplicationController
         # Edit
             # making a get request to '/blogs/:id/edit'
         get '/blogs/:id/edit' do 
-            if logged_in?
-                @blog = Blog.find(params[:id])
-                erb :'/blogs/edit'
-            else
-                redirect '/login'
-            end
+            @blog = Blog.find(params[:id])
+            erb :'/blogs/edit'
         end
         
         # Update
