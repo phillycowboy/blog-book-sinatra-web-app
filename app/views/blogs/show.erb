@@ -1,5 +1,11 @@
 <h1><%= @blog.title %></h1>
 <h3>By: <%= @blog.author %></h3>
+<h3>Genre:</h3>
+<ul>
+<% @blog.genres.each do |genre|%>
+    <li><%= genre.name %></li>
+<% end %>
+</ul>
 <p><%= @blog.content %></p>
 <form action="/blogs/<%= @blog.id %>" method="POST">
     <input type="hidden" name="_method" value="delete">

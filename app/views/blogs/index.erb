@@ -5,6 +5,9 @@
     <h2><a href="/blogs/<%= blog.id %>"> <%= blog.title %> </a></h2><br>
     <h3> By: <%= blog.author %></h3><br>
     <p><%= blog.content %></p><br>
+    <div>
+    <%= blog.genres.map {|genre| genre.name }.join(', ') %>
+    </div>
     <% if current_user == blog.user %>
         <a href="/blogs/<%= blog.id %>/edit">Edit Post</a>
     <%end%>

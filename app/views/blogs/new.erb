@@ -2,17 +2,19 @@
 <p><%= @error %></p>
 <form action="/blogs" method="POST">
     <label>Blog Title</label>
-    <input type="text" name="title">
+    <input type="text" name="blog[title]">
     
     <label>Author</label>
-    <input type="text" name="author">
+    <input type="text" name="blog[author]">
     
     <label>Content</label>
-    <textarea type="textarea" name="content"></textarea><br>
-
+    <textarea type="textarea" name="blog[content]"></textarea>
+    
+    <label>Add Genre To Your Post</label>
+    <input type="text" name="genre[name]"><br>
     <% @genres.each do |genre|%>
         <br>
-        <input type="checkbox" name="genre_ids[]" value="<%= genre.id %>"><%= genre.name %></input>
+        <input type="checkbox" name="blog[genre_ids][]" value="<%= genre.id %>"><%= genre.name %></input>
     
     <% end %>
 
