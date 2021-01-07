@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
         # Create
         # make a post request to '/blogs'
         post '/blogs' do 
+            # genre = Genre.find_by(params["genre"]["id"])
             blog = current_user.blogs.build(params)
             if blog.save 
                 redirect '/blogs'

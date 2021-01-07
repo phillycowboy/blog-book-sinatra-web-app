@@ -8,11 +8,11 @@
     <input type="text" name="author">
     
     <label>Content</label>
-    <textarea type="textarea" name="content"></textarea>
+    <textarea type="textarea" name="content"></textarea><br>
 
     <% @genres.each do |genre|%>
-    
-        <input type="checkbox" name="genre[name]" value="<%= genre.id %>"><%= genre.name %></input>
+        <br>
+        <input type="checkbox" name="genre_ids[]" value="<%= genre.id %>"><%= genre.name %></input>
     
     <% end %>
 
