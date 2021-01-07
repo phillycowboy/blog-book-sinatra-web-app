@@ -18,8 +18,19 @@ post '/signup' do
     end
 end
 
+# Actions that let users view their blogs
 
-# Users can delete account 
+get '/library' do 
+    @blogs = current_user.blogs.reverse
+    erb :'/blogs/index'
+end
+
+get '/mygenres' do 
+    @genres = current_user.genres
+    erb :'/genres/index'
+end
+
+# wont render page 
 
 
 end
