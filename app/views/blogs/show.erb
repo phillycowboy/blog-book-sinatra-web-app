@@ -13,3 +13,6 @@
         <button type="submit">Delete Post</button>
     <%end%>
 </form>
+<% if @blog.user %>
+    <p>Posted by: <%= @blog.user.username %></p>
+<%end%>
