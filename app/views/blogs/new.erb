@@ -10,6 +10,15 @@
     <label>Content</label>
     <textarea type="textarea" name="content"></textarea>
 
+    <% @genres.each do |genre|%>
+    
+        <input type="checkbox" name="genre[name]" value="<%= genre.id %>"><%= genre.name %></input>
+    
+    <% end %>
+
+
+
+
     <button type="Submit">Post Blog</button>
 
 </form>

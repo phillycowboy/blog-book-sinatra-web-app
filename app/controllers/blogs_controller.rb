@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
         # New
         # make a get request to '/blogs/new'
         get '/blogs/new' do 
+            @genres = Genre.all 
             erb :'/blogs/new'
         end
 
