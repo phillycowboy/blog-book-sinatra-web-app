@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 body{
     margin: 0px;
 }
@@ -25,13 +27,17 @@ body{
             li{
                          display: inline;
                          font-size: 17px;
+                     
                  a{
                          color: #f2f2f2;
                          text-decoration: none;
                          padding: 14px;
                          margin: 0%;
+                      
+            
                            &:hover {
                             background-color: #111;
+                          
                            }
                  }
             }
@@ -41,10 +47,16 @@ body{
     .wrapper{
         text-align: center;
         padding-top: 10%;
-        h1{
+        // background-image: url(https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+        // background-size: cover;
+        
+        .welcome{
             color: rgb(71, 71, 212);
+            font-family: 'Lobster', cursive;
+            font-size: 130px;
+            }
         }    
-    }
+    
 
     .branding{
         position: fixed;
@@ -54,6 +66,13 @@ body{
         text-align: center;
 
     }
+
+    .logo{
+         font-family: 'Lobster', cursive;
+         font-size: 19px;
+    }
+
+
     
 //     ul{
 //    .logo{
