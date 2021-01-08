@@ -20,15 +20,15 @@ end
 
 # Actions that let users view their blogs
 
-get '/library' do 
-    @blogs = current_user.blogs.reverse
-    erb :'/blogs/index'
-end
+# get '/library' do 
+#     @blogs = current_user.blogs.reverse
+#     erb :'/blogs/index'
+# end
 
-get '/mygenres' do 
-    @genres = current_user.genres
-    erb :'/genres/index'
-end
+# get '/mygenres' do 
+#     @genres = current_user.genres
+#     erb :'/genres/index'
+# end
 
 # wont render page 
 

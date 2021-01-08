@@ -87,4 +87,9 @@ class BlogsController < ApplicationController
         erb :'/genres/index' 
     end
 
+get '/library' do 
+    @blogs = current_user.blogs.reverse
+    erb :'/blogs/index'
+end
+
 end
