@@ -19,16 +19,16 @@
         <ul>
       <% if logged_in? %>
       <li><a href="/blogs">Blogs</a></li>
-      <li><a href="/logout">Log Out</a></li>
       <li><a href="/genres">All Genres</a></li>
       <li><a href="/library">My Library</a></li>
-      <li><a href="/">Home</a></li>
+      <li><a href="/logout">Log Out</a></li>
+      
       <% else %>
 
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
       <% end %>
-      <li class="logo"><a href="/">BlogBook</a></li>
+      <li class="logo"><strong><a href="/">BlogBook</a></strong></li>
         </ul>
       </nav>
     </div>
@@ -37,7 +37,7 @@
         <%= yield %>
 
       <footer class="branding">
-        <small>&copy; 2021 <strong>BlogBookSinatraWebApp</strong></small>
+        <small>&copy; 2021 <strong>BlogBook Created by: Ben Harter-Murphy</strong></small>
       </footer>
     </div>
 

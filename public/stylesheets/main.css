@@ -30,10 +30,11 @@ nav {
 
 .wrapper {
   text-align: center;
-  padding-top: 35%; }
+  padding-top: 10%; }
+  .wrapper h1 {
+    color: #4747d4; }
 
 .branding {
-  display: hidden;
   position: fixed;
   left: 0;
   bottom: 0;
