@@ -14,20 +14,23 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div>
+    <div class="container">
+      <nav>
+        <ul>
       <% if logged_in? %>
-      <div><a href="/blogs">Blogs</a></div>
-      <div><a href="/logout">Log Out</a></div>
-      <div><a href="/genres">All Genres</a></div>
-      <div><a href="/library">My Library</a></div>
+      <li><a href="/blogs">Blogs</a></li>
+      <li><a href="/logout">Log Out</a></li>
+      <li><a href="/genres">All Genres</a></li>
+      <li><a href="/library">My Library</a></li>
+      <li><a href="/">Home</a></li>
       <% else %>
 
-      <div><a href="/signup">Sign Up</a></div>
-      <div><a href="/login">Log In</a></div>
+      <li><a href="/signup">Sign Up</a></li>
+      <li><a href="/login">Log In</a></li>
       <% end %>
-      <div><a href="/">Home</a></div>
-      
-    
+      <li class="logo"><a href="/">BlogBook</a></li>
+        </ul>
+      </nav>
     </div>
     <div class="wrapper">
 
