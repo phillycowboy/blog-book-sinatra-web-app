@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'sass'
 
 group :test do
   gem 'rspec'
