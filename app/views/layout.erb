@@ -2,7 +2,7 @@
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en">  <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -19,6 +19,7 @@
     <div class="container">
       <nav>
         <ul>
+      <li class="logo"><strong><a href="/">BlogBook</a></strong></li>
       <% if logged_in? %>
       <li><a href="/blogs">Blogs</a></li>
       <li><a href="/genres">All Genres</a></li>
@@ -30,7 +31,6 @@
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
       <% end %>
-      <li class="logo"><strong><a href="/">BlogBook</a></strong></li>
         </ul>
       </nav>
     </div>
