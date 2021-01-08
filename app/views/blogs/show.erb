@@ -3,7 +3,9 @@
 <h3>Genre:</h3>
 <ul>
 <% @blog.genres.each do |genre|%>
+<% if genre.name != "" %>
     <li><%= genre.name %></li>
+<% end %>
 <% end %>
 </ul>
 <p><%= @blog.content %></p>

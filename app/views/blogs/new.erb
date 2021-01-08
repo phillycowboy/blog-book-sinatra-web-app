@@ -14,7 +14,9 @@
     <input type="text" name="genre[name]"><br>
     <% @genres.each do |genre|%>
         <br>
+        <% if genre.name != "" %>
         <input type="checkbox" name="blog[genre_ids][]" value="<%= genre.id %>"><%= genre.name %></input>
+        <% end %>
     
     <% end %>
 
