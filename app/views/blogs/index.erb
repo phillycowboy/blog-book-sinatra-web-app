@@ -6,7 +6,7 @@
     <h3> By: <%= blog.author %></h3><br>
     <p><%= blog.content %></p><br>
     <div>
-    <%= blog.genres.map {|genre| genre.name }.join(', ') %>
+    <%= blog.genres.map {|genre| genre.name }.join(' ') %>
     </div>
     <% if current_user == blog.user %>
         <a href="/blogs/<%= blog.id %>/edit">Edit Post</a>
