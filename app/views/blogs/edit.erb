@@ -1,16 +1,19 @@
-<h1>Edit Your Blog Post For <%= @blog.title %> </h1>
+<div class="edit-container">
+<h1>Edit Your Blog Post For: "<%= @blog.title %>" </h1>
+<hr>
 <p><%= @error %></p>
 <form action="/blogs/<%= @blog.id %>" method="POST">
     <input type="hidden" name="_method" value="PATCH">
-    <label>Blog Title</label>
-    <input type="text" name="blog[title]" value="<%= @blog.title %>">
+    <br><label>Blog Title</label><br>
+    <input type="text" name="blog[title]" value="<%= @blog.title %>"><br><br>
     
-    <label>Author</label>
-    <input type="text" name="blog[author]" value="<%= @blog.author %>">
+    <br><label>Author</label><br>
+    <input type="text" name="blog[author]" value="<%= @blog.author %>"><br><br>
     
-    <label>Content</label>
-    <textarea type="textarea" name="blog[content]"><%= @blog.content %></textarea>
+    <br><label>Content</label><br>
+    <textarea type="textarea" name="blog[content]"><%= @blog.content %></textarea><br><br>
 
-    <button type="Submit">Edit Blog</button>
+    <br><button type="Submit">Edit Blog</button>
 
 </form>
+</div>
