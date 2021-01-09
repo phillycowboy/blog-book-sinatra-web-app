@@ -17,13 +17,13 @@ First execute:
 Second execute:
 
     $shotgun 
-This will give you a port in your browser (type 'localhost:9393/' in your URL bar) to interact with the application itself.  This must be running the entire time you are using the application.  To exit shotgun, navigate you your terminal where you executed it and hit CTRL+C on you keyboard.  Afterwhich the application will no longer respond until shotgun is excuted again.      
+This will give you a port in your browser (type 'localhost:9393/' in your URL bar) to interact with the application itself.  This must be running the entire time you are using the application.  To exit shotgun, navigate you your terminal where you executed it and hit CTRL+C on your keyboard.  Afterwhich the application will no longer respond until shotgun is excuted again.      
 
 ## Usage
 
 To get started please run the command 'bundle install' in the terminal.  This will ensure that all the Gems are loaded and ready to use.
 To access the BlogBook App. Type 'shotgun' in the terminal.
-There you will be prompted to navigate to localhost:9393. type in this address in the URL bar to naigate to the home page.  
+There you will be prompted to navigate to 'localhost:9393'. Type in this address in the URL bar to naigate to the home page.  
 Once you are in the home page you can either sign up or log in. 
 If you are a first time user, welcome! Please sign up by providing a unique Username(email) & Password so that we can locate your future Blogs for you. 
 If you are a returning user please sign in with your current credentials. 
