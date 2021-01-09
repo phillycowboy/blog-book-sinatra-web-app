@@ -13,7 +13,7 @@ body {
 nav {
   overflow: hidden;
   background-color: whitesmoke;
-  box-shadow: 0 2px 2px -2px grey;
+  box-shadow: 0 5px 5px -2px grey;
   position: fixed;
   top: 0;
   width: 100%;
@@ -58,7 +58,8 @@ nav {
   display: inline-block; }
 
 .welcome2 {
-  font-family: "DM Serif Text", serif; }
+  font-family: "DM Serif Text", serif;
+  color: whitesmoke; }
 
 footer .branding {
   position: fixed;

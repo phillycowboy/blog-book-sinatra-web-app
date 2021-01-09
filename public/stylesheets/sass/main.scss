@@ -22,7 +22,7 @@ body{
     nav{
        overflow: hidden;
        background-color:whitesmoke;
-       box-shadow: 0 2px 2px -2px grey;
+       box-shadow: 0 5px 5px -2px grey;
        position: fixed;
        top: 0;
        width: 100%;
@@ -84,6 +84,7 @@ body{
 
         .welcome2{
             font-family: $contenttext;
+            color: whitesmoke;
 }
     
 footer{
