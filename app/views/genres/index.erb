@@ -1,8 +1,12 @@
-<h1>Genres</h1>
-<ul>
-<% @genres.each do |genre|%>
-    <% if genre.name != "" || nil %>
-        <li><h2><%= genre.name %></h2></li>
-    <%end%>
-<%end%>
-</ul>
+<div class="genre-container">
+    <h1>Genres</h1>
+    <div class="genre-cards">
+        <% @genres.each do |genre|%>
+            <% if genre.name != "" || nil %>
+                <div class="genre-card">
+                <h2><%= genre.name %></h2>
+                </div>
+            <%end%>
+        <%end%>
+    </div>
+</div>

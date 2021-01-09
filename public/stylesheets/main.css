@@ -33,16 +33,26 @@ nav {
         border-radius: 5px; }
         nav ul li a:hover {
           background-color: lightgrey;
-          transition: 0.5s ease; }
+          transition: 0.5s ease;
+          cursor: pointer; }
 
 .wrapper {
   text-align: center;
-  padding: 74px 10px; }
-  .wrapper .welcome {
-    color: #4747d4;
-    font-family: 'Lobster', cursive;
-    font-size: 130px;
-    padding: 120px 10px; }
+  padding: 74px 30px; }
+
+.welcome {
+  color: #4747d4;
+  font-family: 'Lobster', cursive;
+  font-size: 130px;
+  padding: 120px 10px;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px -2px grey;
+  background-image: url(https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-position: center; }
+  .welcome .welcome2 {
+    text-align: center; }
 
 .branding {
   position: fixed;
@@ -57,5 +67,37 @@ nav {
 a {
   text-decoration: none;
   color: #4747d4; }
+
+.blog-container .blog-cards {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-column-gap: 5%;
+  grid-row-gap: 20px; }
+  .blog-container .blog-cards .blog-card {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e3dac9;
+    box-shadow: 0 4px 4px -2px grey; }
+    .blog-container .blog-cards .blog-card:hover {
+      background-color: lightgrey;
+      transition: 0.5s ease;
+      cursor: pointer; }
+
+.genre-container .genre-cards {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-column-gap: 5%;
+  grid-row-gap: 20px; }
+  .genre-container .genre-cards .genre-card {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e3dac9;
+    box-shadow: 0 4px 4px -2px grey; }
+    .genre-container .genre-cards .genre-card:hover {
+      background-color: lightgrey;
+      transition: 0.5s ease;
+      cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */
