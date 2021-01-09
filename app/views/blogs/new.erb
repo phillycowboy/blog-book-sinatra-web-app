@@ -1,28 +1,30 @@
+<div class="new-container">
 <h1>Create Your Blog Post</h1>
+<hr>
 <p><%= @error %></p>
 <form action="/blogs" method="POST">
-    <label>Blog Title</label>
-    <input type="text" name="blog[title]">
+    <label>BLOG TITLE</label><br>
+    <input type="text" name="blog[title]"><br><br>
     
-    <label>Author</label>
-    <input type="text" name="blog[author]">
+    <label>AUTHOR</label><br>
+    <input type="text" name="blog[author]"><br><br>
     
-    <label>Content</label>
-    <textarea type="textarea" name="blog[content]"></textarea>
+    <label>CONTENT</label><br>
+    <textarea type="textarea" name="blog[content]" rows=10></textarea><br><br>
     
-    <label>Add Genre To Your Post</label>
-    <input type="text" name="genre[name]"><br>
+    <label>CREATE GENRE</label><br>
+    <input type="text" name="genre[name]"><br><br>
     <% @genres.each do |genre|%>
         <br>
         <% if genre.name != "" || nil %>
-        <input type="checkbox" name="blog[genre_ids][]" value="<%= genre.id %>"><%= genre.name %></input>
+        <input type="checkbox" name="blog[genre_ids][]" value="<%= genre.id %>"><%= genre.name %></input><br>
         <% end %>
     
     <% end %>
 
+</div>
 
 
-
-    <button type="Submit">Post Blog</button>
+   <br><button type="Submit">Post Blog</button>
 
 </form>

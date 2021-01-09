@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
 $logocolor:  rgb(71, 71, 212);
+$contenttext:  'DM Serif Text', serif;
 
 body{
     margin: 0px;
@@ -40,6 +42,7 @@ body{
                          padding: 14px;
                          margin: 0%;
                          border-radius: 5px;
+                         
                       
             
                            &:hover {
@@ -56,9 +59,7 @@ body{
     .wrapper{
         text-align: center;
         padding: 74px 30px;
-        // background-image: url(https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-        // background-size: cover;
-        // background-position: center;
+  
     }   
         .welcome{
             color: $logocolor;
@@ -71,23 +72,26 @@ body{
             box-shadow: 0 5px 5px -2px grey;
             background-image: url(https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
             background-position: center;
-            .welcome2{
-                text-align: center;
-            }
          
             
         }    
-    
 
+        .welcome2{
+            font-family: $contenttext;
+}
+    
+footer{
     .branding{
         position: fixed;
-        // left: 0;
+        left: 0;
         bottom: 0;
         width: 100%;
-        text-align: center;
+        text-align: left;
+        opacity: 0.95;
+
 
     }
-
+}
     .logo{
          font-family: 'Lobster', cursive;
          font-size: 19px;
@@ -100,13 +104,14 @@ body{
     }
 
     .blog-container{
-        
+        font-family: $contenttext;
         .blog-cards{
             padding: 10px;
              display: grid;
              grid-template-columns: 30% 30% 30%;
              grid-column-gap: 5%;
              grid-row-gap: 20px;
+             font-family: $contenttext;
 
              .blog-card{
                  padding: 20px;
@@ -125,7 +130,7 @@ body{
         }
     }
     .genre-container{
-        
+        font-family: $contenttext;
         .genre-cards{
             padding: 10px;
              display: grid;
@@ -149,4 +154,24 @@ body{
              }
         }
     }
+
+    .show-container{
+            .show-card{
+                font-family: $contenttext;
+            }
+    }
+
+    textarea {
+    height: 280px;
+    width: 280px;
+}
+
+.new-container{
+    font-family: $contenttext;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e3dac9;
+    box-shadow: 0 4px 4px -2px grey;
+}
+
 
