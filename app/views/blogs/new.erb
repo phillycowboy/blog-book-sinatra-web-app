@@ -4,13 +4,13 @@
 <p><%= @error %></p>
 <form action="/blogs" method="POST">
     <label>BLOG TITLE</label><br>
-    <input type="text" name="blog[title]"><br><br>
+    <input type="text" name="blog[title]" required><br><br>
     
     <label>AUTHOR</label><br>
-    <input type="text" name="blog[author]"><br><br>
+    <input type="text" name="blog[author]" required><br><br>
     
     <label>CONTENT</label><br>
-    <textarea type="textarea" name="blog[content]" rows=10></textarea><br><br>
+    <textarea type="textarea" name="blog[content]" rows=10 required></textarea><br><br>
     
     <label>CREATE GENRE</label><br>
     <input type="text" name="genre[name]"><br><br>

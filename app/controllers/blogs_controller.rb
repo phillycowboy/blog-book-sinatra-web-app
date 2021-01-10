@@ -18,7 +18,7 @@ class BlogsController < ApplicationController
             else
              blog.genres.build(params["genre"])
             end
-            if blog.save 
+            if  blog.save 
                 redirect '/blogs'
             else
                 @error = "Oops! Please fill out all of the available forms."
@@ -61,6 +61,7 @@ class BlogsController < ApplicationController
             end
 
         end
+
         
         
 
