@@ -35,8 +35,10 @@ class BlogsController < ApplicationController
 
      get '/blogs/:id' do 
         @blog = Blog.find_by(id: params[:id])
-        if @blog 
-          erb :'blogs/show'
+        if !@blog 
+          erb :'error'
+        elsif @blog
+            erb :'blogs/show'
         else 
           redirect '/blogs'
         end
@@ -46,9 +48,12 @@ class BlogsController < ApplicationController
 
 
         get '/blogs/:id/edit' do 
-            @blog = Blog.find(params[:id])
-            unless current_user
+            @blog = Blog.find_by(id: params[:id])
+            unless current_user 
                 erb :'/blogs/edit'
+            end
+            if !@blog 
+                erb :'error'
             else
                 redirect '/blogs'
             end
