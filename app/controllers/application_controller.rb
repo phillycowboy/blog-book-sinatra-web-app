@@ -7,7 +7,6 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "whatever"
     set :public_folder, 'public'
     set :views, 'app/views'
-    # rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   end
 
   not_found do 
@@ -37,11 +36,6 @@ class ApplicationController < Sinatra::Base
   end
 
 
-
-  # def record_not_found 
-  #   render text: "404 not found!", status: 404
-  #   erb :error
-  # end
 
 
  
