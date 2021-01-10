@@ -47,8 +47,14 @@ class BlogsController < ApplicationController
 
         get '/blogs/:id/edit' do 
             @blog = Blog.find(params[:id])
-            erb :'/blogs/edit'
+            unless current_user
+                erb :'/blogs/edit'
+            else
+                redirect '/blogs'
+            end
+
         end
+        # this is where you can view and edit anyones post 
         
 
         patch '/blogs/:id' do 
