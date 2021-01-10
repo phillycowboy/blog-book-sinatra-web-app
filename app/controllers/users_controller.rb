@@ -11,7 +11,7 @@ post '/signup' do
         session[:user_id] = user.id
         redirect '/blogs'
     else 
-        @error = "Invalid Credentials"
+        @error = "Invalid Credentials Please Try Again."
         erb :'/users/signup'
     end
 end
