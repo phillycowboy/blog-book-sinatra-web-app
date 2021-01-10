@@ -37,10 +37,10 @@ class BlogsController < ApplicationController
         @blog = Blog.find_by(id: params[:id])
         if !@blog 
           erb :'error'
-        elsif @blog
+        else @blog
             erb :'blogs/show'
-        else 
-          redirect '/blogs'
+        # else 
+        #   redirect '/blogs'
         end
        
      end
@@ -52,14 +52,16 @@ class BlogsController < ApplicationController
             unless current_user 
                 erb :'/blogs/edit'
             end
-            if !@blog 
+            if !@blog && !current_user
                 erb :'error'
+            elsif @blog && current_user
+                erb :'/blogs/edit'
             else
-                redirect '/blogs'
+                redirect '/blogs/index'
             end
 
         end
-        # this is where you can view and edit anyones post 
+        
         
 
         patch '/blogs/:id' do 
