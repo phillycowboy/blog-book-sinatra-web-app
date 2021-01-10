@@ -15,7 +15,7 @@ post '/login' do
               session[:user_id] = user.id
               redirect '/blogs'
         else
-            @error = "Account not found"
+            @error = "Account Does Not Exist, Please Sign Up."
             erb :'users/login'
         end
     end
