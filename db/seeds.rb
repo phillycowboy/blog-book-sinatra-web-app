@@ -14,7 +14,7 @@ Blog.create(title: Faker::Book.title, author: Faker::Name.name, content: "She ha
 Blog.create(title: Faker::Book.title, author: Faker::Name.name, content: "She had been an angel for coming up on 10 years and in all that time nobody had told her this was possible. The fact that it could ever happen never even entered her mind. Yet there she stood, with the undeniable evidence sitting on the ground before her. Angels could lose their wings.")
 Blog.create(title: Faker::Book.title, author: Faker::Name.name, content: "It was a concerning development that he couldn't get out of his mind. He'd had many friends throughout his early years and had fond memories of playing with them, but he couldn't understand how it had all stopped. There was some point as he grew up that he played with each of his friends for the very last time, and he had no idea that it would be the last.")
 Blog.create(title: Faker::Book.title, author: Faker::Name.name, content: "He had done everything right. There had been no mistakes throughout the entire process. It had been perfection and he knew it without a doubt, but the results still stared back at him with the fact that he had lost.")
-# Blog.create(title: Faker::Name.name)
+
 
 10.times{User.create(username: Faker::Internet.username, password:  Faker::Internet.password)}
 

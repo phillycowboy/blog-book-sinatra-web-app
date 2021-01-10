@@ -4,18 +4,14 @@ class BlogsController < ApplicationController
         require_login
     end
 
-    # CREATE 
-        # New
-        # make a get request to '/blogs/new'
+
         get '/blogs/new' do 
             @genres = Genre.all 
             erb :'/blogs/new'
         end
 
-        # Create
-        # make a post request to '/blogs'
+       
         post '/blogs' do 
-            # genre = Genre.find_by(params["genre"]["id"])
             blog = current_user.blogs.build(params["blog"])
             if genre = Genre.find_by(name: params["genre"]["name"])
                 blog.genres << genre 
@@ -30,16 +26,12 @@ class BlogsController < ApplicationController
             end
         end
 
-    # READ 
-     # index - list all blogs
-     # make a get request to '/blogs'
+    
      get '/blogs' do 
         @blogs = Blog.all.reverse
         erb :'blogs/index'
      end
     
-     # show - list a single blog
-     # make a get request to '/blogs/:id
 
      get '/blogs/:id' do 
         @blog = Blog.find_by(id: params[:id])
@@ -51,17 +43,14 @@ class BlogsController < ApplicationController
        
      end
    
-    # UPDATE
 
-        # Edit
-            # making a get request to '/blogs/:id/edit'
+
         get '/blogs/:id/edit' do 
             @blog = Blog.find(params[:id])
             erb :'/blogs/edit'
         end
         
-        # Update
-            #make a patch request to '/blogs/:id' 
+
         patch '/blogs/:id' do 
             
             @blog = Blog.find(params[:id])
@@ -74,8 +63,7 @@ class BlogsController < ApplicationController
             end
         end
 
-    #DELETE 
-        # make a delete request to '/blogs/:id' 
+        
      delete '/blogs/:id' do 
         blog = Blog.find(params[:id])
         blog.destroy
