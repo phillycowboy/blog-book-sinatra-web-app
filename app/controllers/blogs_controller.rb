@@ -54,7 +54,7 @@ class BlogsController < ApplicationController
             end
             if !@blog && !current_user
                 erb :'error'
-            elsif @blog && current_user
+            elsif  @blog && @blog.user == current_user
                 erb :'/blogs/edit'
             else
                 redirect '/blogs/index'
