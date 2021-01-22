@@ -5,26 +5,26 @@ class BlogsController < ApplicationController
     end
 
 
-        get '/blogs/new' do 
-            @genres = Genre.all 
-            erb :'/blogs/new'
-        end
+    get '/blogs/new' do 
+        @genres = Genre.all 
+        erb :'/blogs/new'
+    end
 
        
-        post '/blogs' do 
-            blog = current_user.blogs.build(params["blog"])
-            if genre = Genre.find_by(name: params["genre"]["name"])
-                blog.genres << genre 
-            else
-             blog.genres.build(params["genre"])
+    post '/blogs' do 
+     blog = current_user.blogs.build(params["blog"])
+        if genre = Genre.find_by(name: params["genre"]["name"])
+            blog.genres << genre 
+        else
+            blog.genres.build(params["genre"])
             end
-            if  blog.save 
-                redirect '/blogs'
-            else
-                @error = "Oops! Please fill out all of the available forms."
-                erb :'/blogs/new' 
-            end
+        if  blog.save 
+            redirect '/blogs'
+        else
+            @error = "Oops! Please fill out all of the available forms."
+            erb :'/blogs/new' 
         end
+    end
 
     
      get '/blogs' do 
@@ -47,51 +47,57 @@ class BlogsController < ApplicationController
    
 
 
-        get '/blogs/:id/edit' do 
-            @blog = Blog.find_by(id: params[:id])
-            unless current_user 
-                erb :'/blogs/edit'
-            end
-            if !@blog && !current_user
-                erb :'error'
-            elsif  @blog && @blog.user == current_user
-                erb :'/blogs/edit'
-            else
-                redirect '/blogs/index'
-            end
-
+    get '/blogs/:id/edit' do 
+     @blog = Blog.find_by(id: params[:id])
+        unless current_user 
+            erb :'/blogs/edit'
+        end
+        if !@blog && !current_user
+            erb :'error'
+        elsif  @blog && @blog.user == current_user
+            erb :'/blogs/edit'
+        else
+            redirect '/blogs/index'
         end
 
+    end
+
         
         
 
-        patch '/blogs/:id' do 
+    patch '/blogs/:id' do 
             
-            @blog = Blog.find(params[:id])
-            if !params["blog"]["title"].empty? && !params["blog"]["author"].empty? && !params["blog"]["content"].empty?
+     @blog = Blog.find(params[:id])
+        if !params["blog"]["title"].empty? && !params["blog"]["author"].empty? && !params["blog"]["content"].empty?
             @blog.update(params["blog"])
-             redirect "/blogs/#{params[:id]}"
-            else
-                @error = "Oops! Please fill out all of the available forms."
-                erb :'/blogs/edit' 
-            end
+            redirect "/blogs/#{params[:id]}"
+        else
+            @error = "Oops! Please fill out all of the available forms."
+            erb :'/blogs/edit' 
         end
+    end
 
         
-     delete '/blogs/:id' do 
+    delete '/blogs/:id' do 
         blog = Blog.find(params[:id])
         blog.destroy
         redirect '/blogs'
-     end
+    end
 
-      get '/genres' do 
+    get '/genres' do 
         @genres = Genre.all
         erb :'/genres/index' 
     end
 
-get '/library' do 
-    @blogs = current_user.blogs.reverse
-    erb :'/blogs/index'
-end
+    get '/library' do 
+        @blogs = current_user.blogs.reverse
+        erb :'/blogs/index'
+    end
+
+    get '/longest' do 
+        @blogs = Blog.all 
+        @longest_blog =  @blogs.max_by{ |blog| blog.content.length} 
+        erb :'blogs/longest'
+    end
 
 end
