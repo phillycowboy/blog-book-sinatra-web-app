@@ -4,6 +4,11 @@ class BlogsController < ApplicationController
         require_login
     end
 
+    get '/blogs/longest' do 
+        @blogs = Blog.all 
+        @longest_blog =  @blogs.max_by{ |blog| blog.content.length} 
+        erb :'/blogs/longest'
+    end
 
     get '/blogs/new' do 
         @genres = Genre.all 
@@ -94,10 +99,10 @@ class BlogsController < ApplicationController
         erb :'/blogs/index'
     end
 
-    get '/longest' do 
-        @blogs = Blog.all 
-        @longest_blog =  @blogs.max_by{ |blog| blog.content.length} 
-        erb :'blogs/longest'
-    end
+    # get '/blogs/longest' do 
+    #     @blogs = Blog.all 
+    #     @longest_blog =  @blogs.max_by{ |blog| blog.content.length} 
+    #     erb :'/blogs/longest'
+    # end
 
 end
